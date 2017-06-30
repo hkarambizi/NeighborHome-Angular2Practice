@@ -12,6 +12,10 @@ import { FilterPipe } from './filter.pipe';
 import { LoggingService } from './login.service';
 import { DataService } from './data.service';
 
+// in the angular-cli upgrade, the app.module.ts file came with a lot of integrations
+// everytime I generated a service, filter or a component, the app.module was auto-magically updated
+// and I did not have to tell my components to expect and directives, only import them
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,7 @@ import { DataService } from './data.service';
     HttpModule,
     RouterModule.forRoot(APP_ROUTES),
   ],
-  providers: [LoggingService, DataService],
+  providers: [LoggingService, DataService], // I did have to inject my services into my @NgModule
   bootstrap: [AppComponent]
 })
 export class AppModule { }
