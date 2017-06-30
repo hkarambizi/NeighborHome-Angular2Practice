@@ -28,4 +28,11 @@
   </div>
   </li>
 </ul>
-<button (click)="logIt()">Log Me</button>
+<h2>Add Neighborhood</h2>
+<form action="" id="add-neighborhood">
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="name"/>
+  <input type="text" [ngModelOptions]="{standalone:true}" [(ngModel)]="station"/>
+  <button (click)="fbPostData(name, station)">Submit</button>
+</form>
+
+<!-- <button (click)="logIt()">Log Me</button> -->

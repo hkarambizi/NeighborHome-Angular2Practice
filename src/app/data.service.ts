@@ -6,11 +6,11 @@ import 'rxjs/Rx';
 export class DataService {
 
   constructor(private http: Http) { };
-    // this fetchData method will be called on in our components that we inject the service into 
+    // this fetchData method will be called on in our components that we inject the service into
     fetchData(){
       //this sets up an OBSERVABLE that we can SUBSCRIBE to
       //Or we can map the data to something like JSON
-      return this.http.get('./neighborhoods.json').map(
+      return this.http.get('https://harry-angulartwo-project.firebaseio.com/.json').map(
         // we take this response and map it json data so we can use it.
         (res) => res.json()
       );
