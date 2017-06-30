@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoggingService } from '../login.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-directory',
@@ -9,18 +11,24 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DirectoryComponent implements OnInit {
   neighborhood: string;
-  neighborhoods = [
-    { name: 'Old Fourth Ward', station: "Kings Memorial"},
-    { name: 'East Point', station: "East Point"},
-    { name: 'Grant Park', station: "Kings Memorial"},
-    { name: 'West Midtown', station: "Bankhead"}
-  ];
-  constructor(private route: ActivatedRoute) {
-    this.neighborhood = route.snapshot.params['neighborhood'];
-  };
+  neighborhoods = [];
+  // constructor(private route: ActivatedRoute) {
+  //   this.neighborhood = route.snapshot.params['neighborhood'];
+  // };
+  constructor(private logger: LoggingService, private dataService: DataService) { }
+
+  logIt() {
+    this.logger.log();
+  }
   classes = {'blue':true, 'red':false, 'underline':true};
   test = true;
+
   ngOnInit() {
+    //now when the page loads, the dataService will fetch the data
+    //then we set the data recieved to our neighborhoods array.
+    this.dataService.fetchData().subscribe(
+      (data) => this.neighborhoods = data
+    );
   }
 
 }
