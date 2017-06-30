@@ -9,10 +9,17 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DirectoryComponent implements OnInit {
   neighborhood: string;
+  neighborhoods = [
+    { name: 'Old Fourth Ward', station: "Kings Memorial"},
+    { name: 'East Point', station: "East Point"},
+    { name: 'Grant Park', station: "Kings Memorial"},
+    { name: 'West Midtown', station: "Bankhead"}
+  ];
   constructor(private route: ActivatedRoute) {
     this.neighborhood = route.snapshot.params['neighborhood'];
   };
-
+  classes = {'blue':true, 'red':false, 'underline':true};
+  test = true;
   ngOnInit() {
   }
 

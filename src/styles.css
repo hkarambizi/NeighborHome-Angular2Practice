@@ -90,12 +90,12 @@ nav a:hover{
   clear: both;
 }
 
-#ninja-listing li{
+#neighborhood-listing li{
   padding: 16px 0;
   border-bottom: 1px solid #e4e4e4;
 }
 
-.single-ninja span{
+.single-neighborhood span{
   display: inline-block;
   border-radius: 2px;
   font-size: 14px;
@@ -103,28 +103,28 @@ nav a:hover{
   padding: 8px !important;
 }
 
-.single-ninja h3{
+.single-neighborhood h3{
   padding: 4px;
   font-size: 20px;
   margin-left: 20px;
   display: inline-block;
 }
 
-.single-ninja div{
+.single-neighborhood div{
   float: right;
   margin-right: 10px;
   line-height: 20px;
   cursor: pointer;
 }
 
-#add-ninja{
+#add-neighborhood{
   margin-top: 30px;
   background: #e7e7e7;
   padding: 10px;
   border-radius: 2px;
 }
 
-#add-ninja input{
+#add-neighborhood input{
   display: inline-block;
   padding: 10px;
   border-radius: 2px;
@@ -132,7 +132,7 @@ nav a:hover{
   width: 240px;
 }
 
-#add-ninja button{
+#add-neighborhood button{
   background: #0288d1;
   color: #eee;
   padding: 8px 10px;
